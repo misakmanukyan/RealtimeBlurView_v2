@@ -1,4 +1,4 @@
-# RealtimeBlurView
+# RealtimeBlurView v2
 
 It's just a realtime blurring overlay like iOS UIVisualEffectView.
 
@@ -26,7 +26,7 @@ Add dependencies in your `build.gradle`:
 
 ```groovy
 	dependencies {
-	    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
+	    implementation 'com.github.HardcodedCat:RealtimeBlurView_v2:1.3.2'
 	}
 ```
 
@@ -71,6 +71,14 @@ I've run the sample on some old phones like Samsung Galaxy S2, Samsung Galaxy S3
 ![Nexus5](imgs/2.png)
 
 # Changelog
+
+### 1.3.2 (2022-11-28)
+
+Optimizations and other features
+
+### 1.3.0 (2020-04-27)
+
+Support for circle shape blur
 
 ### 1.2.1 (2019-05-24)
 
