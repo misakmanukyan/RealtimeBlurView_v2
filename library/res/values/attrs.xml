@@ -5,5 +5,6 @@
 		<attr name="realtimeDownsampleFactor" format="float"/>
 		<attr name="realtimeOverlayColor" format="color"/>
 		<attr name="realtimeIsCircle" format="boolean"/>
+		<attr name="downsampleFactorOptimization" format="boolean"/>
 	</declare-styleable>
 </resources>

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.github.mmin18.realtimeblurview.R;
+import com.github.mmin18.realtimeblurview.BuildConfig;
 
 /**
  * A realtime blurring overlay (like iOS UIVisualEffectView). Just put it above
@@ -29,6 +30,9 @@ import com.github.mmin18.realtimeblurview.R;
  */
 public class RealtimeBlurView extends View {
 
+	public static boolean BLUR_DISABLED = false;
+
+	private View overrideView = null;
 	private float mDownsampleFactor; // default 4
 	private int mOverlayColor; // default #aaffffff
 	private float mBlurRadius; // default 10dp (0 < r <= 25)
@@ -50,6 +54,7 @@ public class RealtimeBlurView extends View {
 	private boolean mDifferentRoot;
 	private static int RENDERING_COUNT;
 	private static int BLUR_IMPL;
+    private boolean mDownsampleFactorOptimization;
 
 	public RealtimeBlurView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -61,13 +66,22 @@ public class RealtimeBlurView extends View {
 				TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics()));
 		mDownsampleFactor = a.getFloat(R.styleable.RealtimeBlurView_realtimeDownsampleFactor, 4);
 		mOverlayColor = a.getColor(R.styleable.RealtimeBlurView_realtimeOverlayColor, 0xAAFFFFFF);
+        mDownsampleFactorOptimization = a.getBoolean(R.styleable.RealtimeBlurView_downsampleFactorOptimization, true);
 		mIsCircle = a.getBoolean(R.styleable.RealtimeBlurView_realtimeIsCircle, false);
 		a.recycle();
 
 		mPaint = new Paint();
 	}
 
+	public void setOverrideView(View view) {
+		overrideView = view;
+	}
+
 	protected BlurImpl getBlurImpl() {
+		if (BLUR_DISABLED) {
+			return new EmptyBlurImpl();
+		}
+
 		if (BLUR_IMPL == 0) {
 			// try to use stock impl first
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -99,7 +113,7 @@ public class RealtimeBlurView extends View {
 		}
 		if (BLUR_IMPL == 0) {
 			try {
-				getClass().getClassLoader().loadClass("android.support.v8.renderscript.RenderScript");
+				getClass().getClassLoader().loadClass("android.renderscript.RenderScript");
 				// initialize RenderScript to load jni impl
 				// may throw unsatisfied link error
 				SupportLibraryBlurImpl impl = new SupportLibraryBlurImpl();
@@ -136,6 +150,10 @@ public class RealtimeBlurView extends View {
 		}
 	}
 
+	public float getBlurRadius(){
+		return mBlurRadius;
+	}
+
 	public void setDownsampleFactor(float factor) {
 		if (factor <= 0) {
 			throw new IllegalArgumentException("Downsample factor must be greater than 0.");
@@ -147,6 +165,10 @@ public class RealtimeBlurView extends View {
 			releaseBitmap();
 			invalidate();
 		}
+	}
+
+	public float getDownsampleFactor(){
+		return mDownsampleFactor;
 	}
 
 	public void setOverlayColor(int color) {
@@ -181,8 +203,13 @@ public class RealtimeBlurView extends View {
 		float downsampleFactor = mDownsampleFactor;
 		float radius = mBlurRadius / downsampleFactor;
 		if (radius > 25) {
-			downsampleFactor = downsampleFactor * radius / 25;
-			radius = 25;
+			if (mDownsampleFactorOptimization) {
+				downsampleFactor = (int) (radius / 25) + 1;
+				radius = radius / downsampleFactor;
+			} else {
+				downsampleFactor = downsampleFactor * radius / 25;
+				radius = 25;
+			}
 		}
 
 		final int width = getWidth();
@@ -244,7 +271,7 @@ public class RealtimeBlurView extends View {
 		public boolean onPreDraw() {
 			final int[] locations = new int[2];
 			Bitmap oldBmp = mBlurredBitmap;
-			View decor = mDecorView;
+			View decor = overrideView != null ? overrideView : mDecorView;
 			if (decor != null && isShown() && prepare()) {
 				boolean redrawBitmap = mBlurredBitmap != oldBmp;
 				oldBmp = null;
