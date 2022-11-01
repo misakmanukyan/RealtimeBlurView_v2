@@ -50,7 +50,8 @@ android {
 
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.novoda:bintray-release:0.9.1'

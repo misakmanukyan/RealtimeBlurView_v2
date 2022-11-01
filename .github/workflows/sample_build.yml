@@ -1,0 +1,24 @@
+name: Sample build
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v3
+    - name: Build
+      run: |
+        ./gradlew assembleDebug
+    - name: Store generated APK file
+      uses: actions/upload-artifact@v3
+      with:
+        name: sample
+        path: ./sample/build/outputs/apk/main/debug/
+    - name: Store generated Library
+      uses: actions/upload-artifact@v3
+      with:
+        name: RealtimeBlurView
+        path: ./library/build/
