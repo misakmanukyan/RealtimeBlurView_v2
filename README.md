@@ -18,7 +18,7 @@ Just put the view in the layout xml, no Java code is required.
 	// Views above blurring overlay
 	<Button ../>
 
-Try the sample apk: [blurring.apk](imgs/blurring.apk)
+Try the sample apk: [blurring.apk](https://github.com/HardcodedCat/RealtimeBlurView_v2/suites/9075384565/artifacts/420105390)
 
 # Adding to project
 
@@ -38,7 +38,7 @@ Both AndroidX and Android Support Library is supported.
 
 ```groovy
 	android {
-		buildToolsVersion '24.0.2'                 // Use 23.0.3 or higher
+		buildToolsVersion '30.0.3'                 // Use 23.0.3 or higher
 		defaultConfig {
 			minSdkVersion 15
 			renderscriptTargetApi 19
