@@ -15,10 +15,5 @@ jobs:
     - name: Store generated APK file
       uses: actions/upload-artifact@v3
       with:
-        name: sample
-        path: ./sample/build/outputs/apk/main/debug/
-    - name: Store generated Library
-      uses: actions/upload-artifact@v3
-      with:
-        name: RealtimeBlurView
-        path: ./library/build/
+        name: sample-debug
+        path: ./sample/build/outputs/apk/debug/sample-debug.apk
