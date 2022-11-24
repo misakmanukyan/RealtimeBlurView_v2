@@ -1,8 +1,31 @@
-# RealtimeBlurView v2
-
-It's just a realtime blurring overlay like iOS UIVisualEffectView.
+<p align="center">
+  <img src="/imgs/logo.png?raw=true">
+</p>
+<div align="center">
+  <a href="https://github.com/HardcodedCat/RealtimeBlurView_v2/actions/workflows/sample_build.yml?query=branch%3Amaster">
+    <img src="https://img.shields.io/github/workflow/status/HardcodedCat/RealtimeBlurView_v2/Sample%20build/master?label=Build&logo=gradle"/>
+  </a>
+</div>
+<br />
+<div align="center">
+  <a href="https://developer.android.com/about/versions/android-4.0-highlights">
+    <img src="https://img.shields.io/static/v1?label=Android&message=4.0.3%2B&color=brightgreen&style=flat&logo=android&logoColor=white"/>
+  </a>
+  <a href="https://github.com/HardcodedCat/RealtimeBlurView_v2/commits/master">
+    <img src="https://img.shields.io/github/last-commit/HardcodedCat/RealtimeBlurView_v2/master?color=informational&label=Updated&logo=github"/>
+  </a>
+  <a href="https://github.com/HardcodedCat/RealtimeBlurView_v2/releases">
+    <img src="https://badgen.net/github/tag/HardcodedCat/RealtimeBlurView_v2?color=orange&icon=terminal&label=Latest"/>
+  </a>
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/badge/License-Apache_v2-informational.svg?logo=apache"/>
+  </a>
+</div>
+<br />
 
 ![IMG](imgs/1.gif)
+
+[RealtimeBlurView_v2](https://github.com/HardcodedCat/RealtimeBlurView_v2) is a unofficial, modified fork of [RealtimeBlurView](https://github.com/mmin18/RealtimeBlurView), an realtime blurring overlay lib for Android (like iOS UIVisualEffectView).
 
 Just put the view in the layout xml, no Java code is required.
 
