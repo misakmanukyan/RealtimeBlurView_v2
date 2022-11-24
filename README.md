@@ -149,3 +149,11 @@ I've run the sample on some old phones like Samsung Galaxy S2, Samsung Galaxy S3
 > **1.0.4 (2016-9-28)**
 >
 > Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.
+
+***
+
+<div align="center">
+  <a href="https://api.github.com/repos/HardcodedCat/RealtimeBlurView_v2/forks">
+    <img src="https://img.shields.io/github/forks/HardcodedCat/RealtimeBlurView_v2?style=social"/>
+  </a>
+</div>
