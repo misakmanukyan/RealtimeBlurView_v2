@@ -27,6 +27,8 @@
 
 [RealtimeBlurView_v2](https://github.com/HardcodedCat/RealtimeBlurView_v2) is a unofficial, modified fork of [RealtimeBlurView](https://github.com/mmin18/RealtimeBlurView), an realtime blurring overlay lib for Android (like iOS UIVisualEffectView).
 
+***
+
 Just put the view in the layout xml, no Java code is required.
 
 	// Views to be blurred
@@ -42,6 +44,8 @@ Just put the view in the layout xml, no Java code is required.
 	<Button ../>
 
 Try the sample apk: [blurring.apk](https://github.com/HardcodedCat/RealtimeBlurView_v2/suites/9075384565/artifacts/420105390)
+
+***
 
 # Adding to project
 
@@ -77,11 +81,15 @@ Add proguard rules if necessary:
 -keep class androidx.renderscript.** { *; }
 ```
 
+***
+
 # Limitations
 
 - Adding multiple RealtimeBlurView (even not visible) may hurt drawing performance, like use it in ListView or RecyclerView.
 
 - It will not work with SurfaceView / TextureView like VideoView, GoogleMapView
+
+***
 
 # Performance
 
@@ -93,49 +101,51 @@ I've run the sample on some old phones like Samsung Galaxy S2, Samsung Galaxy S3
 
 ![Nexus5](imgs/2.png)
 
+***
+
 # Changelog
-
-### 1.3.2 (2022-11-28)
-
-Optimizations and other features
-
-### 1.3.0 (2020-04-27)
-
-Support for circle shape blur
-
-### 1.2.1 (2019-05-24)
-
-Improve BlurImpl detection.
-
-### 1.2 (2019-05-22)
-
-Support both AndroidX and Android Support Library.
-
-### 1.1.2 (2018-05-28)
-
-Bug fix (Draw overlay color in rect).
-
-### 1.1.1 (2018-05-22)
-
-Fix downsample factor issue when blur radius is very big.
-
-### 1.1.0 (2017-01-02)
-
-Some improvements (OOM, resize, window background)
-
-### 1.0.8 (2016-11-29)
-
-Fix view not refreshed issue on PopupWindow
-
-### 1.0.6 (2016-11-7)
-
-Fix crash when view is very small (draw at least 1px)
-
-### 1.0.5 (2016-11-5)
-
-Support Popup Window (Use it as dialog background)
-Ignore UnsatisfiedLinkError if APK is not debuggable.
-
-### 1.0.4 (2016-9-28)
-
-Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.
+>
+> **1.3.2 (2022-11-28)**
+>
+> Optimizations and other features
+>
+> **1.3.0 (2020-04-27)**
+>
+> Support for circle shape blur
+>
+> **1.2.1 (2019-05-24)**
+>
+> Improve BlurImpl detection.
+>
+> **1.2 (2019-05-22)**
+>
+> Support both AndroidX and Android Support Library.
+>
+> **1.1.2 (2018-05-28)**
+>
+> Bug fix (Draw overlay color in rect).
+>
+> **1.1.1 (2018-05-22)**
+>
+> Fix downsample factor issue when blur radius is very big.
+>
+> **1.1.0 (2017-01-02)**
+> 
+> Some improvements (OOM, resize, window background)
+>
+> **1.0.8 (2016-11-29)**
+> 
+> Fix view not refreshed issue on PopupWindow
+> 
+> **1.0.6 (2016-11-7)**
+> 
+> Fix crash when view is very small (draw at least 1px)
+>
+> **1.0.5 (2016-11-5)**
+>
+> Support Popup Window (Use it as dialog background)
+> Ignore UnsatisfiedLinkError if APK is not debuggable.
+> 
+> **1.0.4 (2016-9-28)**
+>
+> Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.
