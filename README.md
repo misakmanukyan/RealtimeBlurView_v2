@@ -43,7 +43,7 @@ Just put the view in the layout xml, no Java code is required.
 	// Views above blurring overlay
 	<Button ../>
 
-Try the sample apk: [blurring.apk](https://github.com/HardcodedCat/RealtimeBlurView_v2/suites/9075384565/artifacts/420105390)
+Try the sample apk: [blurring.apk](https://github.com/HardcodedCat/RealtimeBlurView_v2/suites/9478708287/artifacts/449119298)
 
 ***
 
