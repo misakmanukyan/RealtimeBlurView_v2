@@ -171,6 +171,12 @@ I've run the sample on some old phones like Samsung Galaxy S2, Samsung Galaxy S3
 ***
 
 <div align="center">
+  <a href="https://jitpack.io/#HardcodedCat/RealtimeBlurView_v2">
+    <img src="https://jitpack.io/v/HardcodedCat/RealtimeBlurView_v2/month.svg"/>
+  </a>
+  <a href="https://jitpack.io/#HardcodedCat/RealtimeBlurView_v2">
+    <img src="https://jitpack.io/v/HardcodedCat/RealtimeBlurView_v2/week.svg"/>
+  </a>
   <a href="https://api.github.com/repos/HardcodedCat/RealtimeBlurView_v2/forks">
     <img src="https://img.shields.io/github/forks/HardcodedCat/RealtimeBlurView_v2?style=social"/>
   </a>
