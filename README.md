@@ -3,7 +3,7 @@
 </p>
 <div align="center">
   <a href="https://github.com/HardcodedCat/RealtimeBlurView_v2/actions/workflows/sample_build.yml?query=branch%3Amaster">
-    <img src="https://img.shields.io/github/workflow/status/HardcodedCat/RealtimeBlurView_v2/Sample%20build/master?label=Build&logo=gradle"/>
+    <img src="https://img.shields.io/github/actions/workflow/status/HardcodedCat/RealtimeBlurView_v2/sample_build.yml?branch=master&label=Build&logo=gradle"/>
   </a>
 </div>
 <br />
