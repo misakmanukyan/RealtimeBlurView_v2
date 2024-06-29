@@ -5,13 +5,14 @@ dependencies {
 }
 
 android {
+    namespace 'com.github.mmin18.realtimeblurview'
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        renderscriptTargetApi 28
+        renderscriptTargetApi 30
     }
 
     lintOptions {

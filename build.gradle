@@ -16,11 +16,11 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 28
-    buildToolsVersion = "30.0.3"
-    minSdkVersion = 17
-    targetSdkVersion = 28
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    compileSdkVersion = 33
+    buildToolsVersion = "34.0.0"
+    minSdkVersion = 26
+    targetSdkVersion = 30
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
     lintAbortOnError = false
 }
